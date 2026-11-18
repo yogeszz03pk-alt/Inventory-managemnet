@@ -1,19 +1,38 @@
-import java.util.ArrayList;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.nio.charset.*;
+import java.nio.file.*;
+import java.security.*;
+import java.text.*;
+import java.time.*;
+import java.time.format.*;
+import java.util.*;
 import java.util.List;
+import javax.crypto.*;
+import javax.crypto.spec.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import javax.swing.plaf.basic.*;
+import javax.swing.table.*;
 
-public final class CsvUtil {
-    private CsvUtil() {}
+final class CsvUtil {
+    private CsvUtil() { }
 
-    public static String escape(String value) {
-        if (value == null) return "";
+    static String escape(String value) {
+        if (value == null) {
+            return "";
+        }
         boolean needsQuotes = value.contains(",") || value.contains("\"") || value.contains("\n") || value.contains("\r");
         String escaped = value.replace("\"", "\"\"");
         return needsQuotes ? "\"" + escaped + "\"" : escaped;
     }
 
-    public static List<String> parseLine(String line) {
+    static List<String> parse(String line) {
         List<String> fields = new ArrayList<>();
-        if (line == null || line.isEmpty()) return fields;
+        if (line == null || line.isEmpty()) {
+            return fields;
+        }
         StringBuilder current = new StringBuilder();
         boolean inQuotes = false;
         for (int i = 0; i < line.length(); i++) {
@@ -36,10 +55,12 @@ public final class CsvUtil {
         return fields;
     }
 
-    public static String join(List<String> fields) {
+    static String join(List<String> fields) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < fields.size(); i++) {
-            if (i > 0) sb.append(',');
+            if (i > 0) {
+                sb.append(',');
+            }
             sb.append(escape(fields.get(i)));
         }
         return sb.toString();
