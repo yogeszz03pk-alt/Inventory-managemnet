@@ -1,9 +1,6 @@
 import java.awt.EventQueue;
 import java.nio.file.Path;
 
-/**
- * Application entry point.
- */
 public final class Inventory {
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
