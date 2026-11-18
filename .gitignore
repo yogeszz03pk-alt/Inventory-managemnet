@@ -1,0 +1,19 @@
+# Build output
+build/
+*.class
+*.jar
+!dist/InventoryManager.jar
+
+# Data (created at runtime)
+data/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
