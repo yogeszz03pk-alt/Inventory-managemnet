@@ -16,15 +16,6 @@ import javax.swing.event.*;
 import javax.swing.plaf.basic.*;
 import javax.swing.table.*;
 
-final class ProductChoice {
-    final Product product;
-
-    ProductChoice(Product product) {
-        this.product = product;
-    }
-
-    @Override
-    public String toString() {
-        return product.getName() + " (" + product.getId() + ")";
-    }
-}
+record ProductChoice(String id, String label) {
+            @Override public String toString() { return label; }
+        }

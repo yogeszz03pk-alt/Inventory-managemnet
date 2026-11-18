@@ -17,17 +17,17 @@ import javax.swing.plaf.basic.*;
 import javax.swing.table.*;
 
 enum UserRole {
-    SELLER("Inventory / Seller"),
-    SUPPLIER("Supplier"),
-    CUSTOMER("Customer");
+        SELLER("Inventory / Seller"),
+        SUPPLIER("Supplier"),
+        CUSTOMER("Customer");
 
-    private final String label;
+        private final String label;
 
-    UserRole(String label) {
-        this.label = label;
+        UserRole(String label) {
+            this.label = label;
+        }
+
+        String label() {
+            return label;
+        }
     }
-
-    String label() {
-        return label;
-    }
-}

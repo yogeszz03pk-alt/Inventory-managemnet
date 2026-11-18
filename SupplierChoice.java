@@ -16,15 +16,6 @@ import javax.swing.event.*;
 import javax.swing.plaf.basic.*;
 import javax.swing.table.*;
 
-final class SupplierChoice {
-    final Supplier supplier;
-
-    SupplierChoice(Supplier supplier) {
-        this.supplier = supplier;
-    }
-
-    @Override
-    public String toString() {
-        return supplier.getName() + " (" + supplier.getId() + ")";
-    }
-}
+record SupplierChoice(String id, String label) {
+            @Override public String toString() { return label; }
+        }

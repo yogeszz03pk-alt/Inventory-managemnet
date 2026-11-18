@@ -1,13 +1,27 @@
-public final class CartLine {
-    private final String productId;
-    private int quantity;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.nio.charset.*;
+import java.nio.file.*;
+import java.security.*;
+import java.text.*;
+import java.time.*;
+import java.time.format.*;
+import java.util.*;
+import java.util.List;
+import javax.crypto.*;
+import javax.crypto.spec.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import javax.swing.plaf.basic.*;
+import javax.swing.table.*;
 
-    public CartLine(String productId, int quantity) {
-        this.productId = productId;
-        this.quantity = quantity;
+final class CartLine {
+        final String productId;
+        int quantity;
+
+        CartLine(String productId, int quantity) {
+            this.productId = productId;
+            this.quantity = quantity;
+        }
     }
-
-    public String getProductId() { return productId; }
-    public int getQuantity() { return quantity; }
-    public void setQuantity(int quantity) { this.quantity = quantity; }
-}

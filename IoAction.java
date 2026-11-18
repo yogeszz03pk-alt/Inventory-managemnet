@@ -16,7 +16,4 @@ import javax.swing.event.*;
 import javax.swing.plaf.basic.*;
 import javax.swing.table.*;
 
-@FunctionalInterface
-interface IoAction {
-    void run() throws IOException;
-}
+interface IoAction { void run() throws IOException; }
